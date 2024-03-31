@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Ojuju:wght@200..800&display=swap" rel="stylesheet">
+<title>Video Player</title>
+<style>
+  /* Full-screen styling */
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative; /* Set body position to relative */
+  }
+
+  h4 {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
+  }
+
+  /* Video Styling */
+  video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1; /* Place video behind other content */
+  }
+
+  /* Overlay content */
+  #overlayContent {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    z-index: 1; /* Ensure overlay content is on top */
+    opacity: 0; /* Initially hide the overlay content */
+    animation: fadeIn ease-in 6s forwards; /* Animation applied to fade in */
+  }
+
+  /* Additional styling for the text */
+  h1 {
+    font-size: 7em;
+  }
+
+  h4 {
+    font-size: 2em;
+  }
+
+  /* Animation keyframes */
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      margin-top:150px;
+    }
+    25% {
+      opacity: 0;
+      margin-top:110px;
+    }
+    50% {
+      opacity: 0;
+      margin-top:60px;
+    }
+    75% {
+      opacity: 0;
+      margin-top:40px;
+    }
+    100% {
+      opacity: 1;
+      margin-top:-10px;
+    }
+  }
+</style>
+</head>
+<body>
+  <!-- Video Player -->
+  <video id="myVideo" autoplay muted>
+    <source
+      src="(2210) 10 Hours of Huge Waves - Relaxing Sounds for Sleep, Ocean Sounds Ambiance for Relaxation & Spa - YouTube - Google Chrome 2024-03-29 19-10-28.mp4"
+      type="video/mp4"
+    />
+    Your browser does not support the video tag.
+  </video>
+
+  <!-- Overlay content -->
+  <div id="overlayContent">
+    <h1>NEER ROBOTICS</h1>
+    <h4>OCEAN'S PRIDE</h4>
+  </div>
+
+  <script>
+    var video = document.getElementById("myVideo");
+
+    // Skip the first 9 seconds of the video
+    video.addEventListener("loadedmetadata", function () {
+      this.currentTime = 10.3;
+    });
+
+    // Pause the video when it reaches 15 seconds
+    video.addEventListener("timeupdate", function () {
+      if (this.currentTime >= 15.3) {
+        this.pause();
+      }
+    });
+
+    // Show the overlay content at 12 seconds using CSS animation
+    setTimeout(function () {
+      document.getElementById("overlayContent").style.opacity = 1;
+    }, 12000); // 12000 milliseconds = 12 seconds
+
+    // Play the video
+    video.play();
+
+    // Redirect to "oceancleaner.html" after the video ends
+    video.addEventListener("ended", function() {
+  window.location.href = "oceancleaner.html";
+});
+  </script>
+</body>
+</html>
