@@ -21,9 +21,7 @@
 
   h4 {
     font-family: "Montserrat", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: weight;
-    font-style: normal;
+    font-style: normal; /* Corrected typo */
   }
 
   /* Video Styling */
@@ -103,14 +101,14 @@
   <script>
     var video = document.getElementById("myVideo");
 
-    // Skip the first 9 seconds of the video
+    // Skip the first 10 seconds of the video
     video.addEventListener("loadedmetadata", function () {
-      this.currentTime = 10.3;
+      this.currentTime = 10;
     });
 
     // Pause the video when it reaches 15 seconds
     video.addEventListener("timeupdate", function () {
-      if (this.currentTime >= 15.3) {
+      if (this.currentTime >= 15) {
         this.pause();
       }
     });
@@ -120,13 +118,14 @@
       document.getElementById("overlayContent").style.opacity = 1;
     }, 12000); // 12000 milliseconds = 12 seconds
 
-    // Play the video
-    video.play();
-
     // Redirect to "oceancleaner.html" after the video ends
-    video.addEventListener("ended", function() {
-  window.location.href = "oceancleaner.html";
-});
+  // Redirect to "oceancleaner.html" after the video ends
+  setTimeout(function () {
+        // Redirect to the target page
+        window.location.href = "oceancleaner.html";
+    }, 7000);
+
+  
   </script>
 </body>
 </html>

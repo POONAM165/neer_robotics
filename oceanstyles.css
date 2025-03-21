@@ -704,7 +704,7 @@ font-weight:bold
 
   
   /* Nav */
-  nav {
+  .navbar1 {
     height: 70px;
     font-size: 20px;
     background: rgb(0, 0, 0);
@@ -715,8 +715,9 @@ font-weight:bold
     align-items: center;
     position: sticky;
     top: 0;
+    z-index:10;
   }
-  nav svg {
+  .navbar1 svg {
     display: none;
   }
   .logo h2 {
@@ -740,18 +741,18 @@ font-weight:bold
   .nav-items h3 {
     display: none;
   }
-  nav li {
+  .navbar1 li {
     list-style: none;
     margin: 0 0.5rem;
   }
-  nav a {
+  .navbar1 a {
     text-decoration: none;
     color: rgb(255, 255, 255);
   }
-  nav a:hover {
+  .navbar1 a:hover {
     color: #a0ebfd;
   }
-  nav a::after {
+  .navbar1 a::after {
     content: "";
     display: block;
     height: 3px;
@@ -759,7 +760,7 @@ font-weight:bold
     width: 0%;
     transition: all ease-in-out 300ms;
   }
-  nav a:hover::after {
+  .navbar1 a:hover::after {
     width: 100%;
   }
   #check,
@@ -804,18 +805,18 @@ font-weight:bold
       font-size: 13px;
       margin-bottom: 1rem;
     }
-    nav svg {
+    .navbar1 svg {
       display: inline-block;
       cursor: pointer;
       vertical-align: top;
     }
-    nav li {
+    .navbar1 li {
       margin: 1rem 0;
     }
-    nav a {
+    .navbar1 a {
       display: inline-block;
     }
-    nav a:hover {
+    .navbar1 a:hover {
       margin-left: 2px;
       transition: all ease-in-out 300ms;
     }
